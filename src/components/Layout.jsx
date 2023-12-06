@@ -1,22 +1,47 @@
 import React, { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import logoWithNameLight from './images/icon-with-name-light-theme.png';
+import logoWithNameDark from './images/icon-with-name-dark-theme.png';
+import logoLight from './images/icon-light-theme.png';
+import logoDark from './images/icon-dark-theme.png';
+import './css/root.css'
 
 const Layout = () => {
 
-    const [activeTab, setActiveTab] = useState('A');
+    const [activeTheme, setActiveTheme] = useState('light');
 
     return (<>
         <header className="header">
-            <span className="name-header-container"><p className="name-header">This is QA</p></span>
-            <nav className={"nav-container"}>
-                <span className={`nav-element${(activeTab === 'A') ? " active" : ""}`} onClick={() => setActiveTab('A')}><Link to="/" >About me </Link></span>
-                <span className={`nav-element${(activeTab === 'M') ? " active" : ""}`} onClick={() => setActiveTab('M')}><Link to="/mycity" >My City </Link></span>
-                {/* <span className={`nav-element${(activeTab == 'C') ? " active" : ""}`} onClick={() => setActiveTab('C')}><Link to="/contactme" >Contact me </Link></span> */}
+            <nav className="top-nav">
+                <span className="logo">
+                    <img className={"website-logo"} src={(activeTheme === "light") ? logoWithNameLight : logoWithNameDark} alt="website Logo" />
+                </span>
+
+                <span className={"nav-options"}>
+                    <button className="nav-button active"> Home</button>
+                    <span className={"nav-divider"}></span>
+                    <button className="nav-button"> Contact us</button>
+                    <span className={"nav-divider"}></span>
+                    <button className="nav-button"> Login</button>
+                    <span className={"nav-divider"}></span>
+                    <button className="nav-button"> Sign up</button>
+
+                </span>
             </nav>
         </header>
         <Outlet />
         <footer className="footer">
-            <p>This is a Assignment for the MCDA5510 ©2023</p>
+            <div className="footer-nav">
+                <img src={(activeTheme === "light") ? logoLight : logoDark} alt="footer logo" className="footer-logo" />
+                <p className="footer-note">© 2023 GitHub, Inc.</p>
+                <p className="footer-note"><a href="">Terms</a></p>
+                <p className="footer-note"><a href="">Privacy</a></p>
+                <p className="footer-note"><a href="">Security</a></p>
+                <p className="footer-note"><a href="">Status</a></p>
+                <p className="footer-note"><a href="">Docs</a></p>
+                <p className="footer-note"><a href="">Contact</a></p>
+
+            </div>
         </footer>
 
     </>)
