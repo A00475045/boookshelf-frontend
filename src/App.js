@@ -8,12 +8,15 @@ import Layout from './components/Layout'
 import NotFound from './components/NotFound'
 import Dashboard from './components/Dashboard'
 import cookie from 'js-cookie';
-import {RequireAuth} from 'react-auth-kit'
+import LoginContext from './components/LoginContext';
+import { useState } from "react";
 
 function App() {
-
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(cookie.get('jwt') !== undefined)
   return (
     <div>
+    <LoginContext.Provider value={{isUserLoggedIn,setIsUserLoggedIn}}>
+
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -29,6 +32,7 @@ function App() {
 
       </Routes>
       </BrowserRouter>
+      </LoginContext.Provider>
     </div>
   );
 }

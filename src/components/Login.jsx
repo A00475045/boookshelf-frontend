@@ -1,19 +1,23 @@
 import './css/login.css'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import LoginImg from './images/login.png';
 import axios from 'axios';
 import URL from './url';
 import cookie from 'js-cookie';
 import { useNavigate, Navigate } from 'react-router-dom'
+import LoginContext from './LoginContext'
+
 
 
 function Login() {
     const navigate = useNavigate();
+    const { isUserLoggedIn, setIsUserLoggedIn } = useContext(LoginContext);
     const [loginState, setLoginState] = useState("nil");
     const [inputErr, setInputErr] = useState(null);
     const [loginErr, setLoginErr] = useState(null);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
 
     if (cookie.get('jwt')) {
         return <Navigate replace to="/dashboard" />
@@ -36,6 +40,7 @@ function Login() {
             cookie.set("username", response.data.username);
             cookie.set("jwt", response.data.token);
             setLoginState("LoggedIn");
+            setIsUserLoggedIn(true);
 
         } catch (error) {
             setLoginState("");
