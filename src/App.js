@@ -9,6 +9,8 @@ import NotFound from './components/NotFound'
 import Dashboard from './components/Dashboard'
 import cookie from 'js-cookie';
 import LoginContext from './components/LoginContext';
+import Browse from './components/Browse'
+import Selling from './components/Sellings'
 import { useState } from "react";
 
 function App() {
@@ -24,7 +26,12 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
           <Route path="contactus" element={<Contactus />} />
-          <Route path="dashboard" element={<Dashboard />} />
+          {/* <Routes> */}
+            <Route path="dashboard" element={<Dashboard />} >
+              <Route index element={<Browse />} />
+              <Route path="yourselling" element={<Selling />} />
+            </Route>
+          {/* </Routes> */}
 
 
           <Route path="*" element={<NotFound />} /> 

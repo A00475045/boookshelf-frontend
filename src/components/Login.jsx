@@ -49,7 +49,7 @@ function Login() {
         }
     }
     if (loginState === "LoggedIn") {
-        navigate('/dashboard');
+        navigate('/dashboard/');
     }
 
     return (

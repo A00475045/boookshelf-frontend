@@ -21,7 +21,7 @@ const Layout = () => {
                 </span>
 
                 <span className={"nav-options"}>
-                    {!isUserLoggedIn ? <a className={`nav-button ${location.pathname.split('/')[1] === '' ? 'active' : ''}`} id="home" href="/"> Home</a> : <a className={`nav-button ${location.pathname.split('/')[1] === 'dashboard' ? 'active' : ''}`} id="dashboard" href="/dashboard"> Dashboard</a>}
+                    {!isUserLoggedIn ? <a className={`nav-button ${location.pathname.split('/')[1] === '' ? 'active' : ''}`} id="home" href="/"> Home</a> : <a className={`nav-button ${location.pathname.split('/')[1] === 'dashboard' ? 'active' : ''}`} id="dashboard" href="/dashboard/"> Dashboard</a>}
                     <span className={"nav-divider"}></span>
                     {!isUserLoggedIn ? <a className={`nav-button ${location.pathname.split('/')[1] === 'contactus' ? 'active' : ''}`} id="contact" href="/contactus"> Contact us</a> : <a className={`nav-button ${location.pathname.split('/')[1] === 'profile' ? 'active' : ''}`} id="profile" href="/profile"> Profile</a>}
                     <span className={"nav-divider"}></span>
@@ -36,7 +36,7 @@ const Layout = () => {
         <footer className="footer">
             <div className="footer-nav">
                 <img src={(activeTheme === "light") ? logoLight : logoDark} alt="footer logo" className="footer-logo" />
-                <p className="footer-note">© 2023 GitHub, Inc.</p>
+                <p className="footer-note">© 2023 BoookShelf, Inc.</p>
                 <p className="footer-note"><a href="">Terms</a></p>
                 <p className="footer-note"><a href="">Privacy</a></p>
                 <p className="footer-note"><a href="">Security</a></p>

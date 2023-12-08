@@ -30,10 +30,14 @@ a {
     height: 7vh;
     display: flex;
     align-items: center;
-    margin-top: 1vh;
+    /* margin-top: 1vh; */
     padding: 0 2.5vh;
     justify-content: space-between;
     background-color: var(--var-background-second-color);
+    border-bottom: 0.1px solid var(--var-tirtiary-color);
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 -5px 10px var(--var-secondary-color);
 }
 
 .nav-options {
