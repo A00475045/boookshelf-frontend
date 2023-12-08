@@ -10,7 +10,7 @@ import './css/home.css'
 const Home = () => {
 
     if (cookie.get('jwt')) {
-        return <Navigate replace to="/dashboard" />
+        return <Navigate replace to="/dashboard/" />
     }
 
 

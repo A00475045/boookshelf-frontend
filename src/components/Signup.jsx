@@ -10,7 +10,7 @@ const Signup = () => {
     const [signupState, setSignupState] = useState("");
 
     if (cookie.get('jwt')) {
-        return <Navigate replace to="/dashboard" />
+        return <Navigate replace to="/dashboard/" />
     }
     const formSubmit = (e) => {
         setSignupState("await");

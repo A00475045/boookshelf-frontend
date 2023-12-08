@@ -6,7 +6,7 @@ import { Navigate } from 'react-router-dom'
 const Contactus = () => {
 
     if (cookie.get('jwt')) {
-        return <Navigate replace to="/dashboard" />
+        return <Navigate replace to="/dashboard/" />
     }
     return (
         <main className={"main-contact"}>

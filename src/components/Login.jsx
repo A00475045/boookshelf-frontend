@@ -20,7 +20,7 @@ function Login() {
 
 
     if (cookie.get('jwt')) {
-        return <Navigate replace to="/dashboard" />
+        return <Navigate replace to="/dashboard/" />
     }
 
     async function formSubmit() {
