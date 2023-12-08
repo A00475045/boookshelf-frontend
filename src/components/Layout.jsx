@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import logoWithNameLight from './images/icon-with-name-light-theme.png';
 import logoWithNameDark from './images/icon-with-name-dark-theme.png';
 import logoLight from './images/icon-light-theme.png';
 import logoDark from './images/icon-dark-theme.png';
 import './css/root.css'
+import cookie from 'js-cookie';
 
 const Layout = () => {
-
+    const location = useLocation();
+    const [isLoggedIn, setIsLoggedIn] = useState(cookie.get('jwt') !== undefined);
     const [activeTheme, setActiveTheme] = useState('light');
 
     return (<>
@@ -18,13 +20,13 @@ const Layout = () => {
                 </span>
 
                 <span className={"nav-options"}>
-                    <button className="nav-button active"> Home</button>
+                    {!isLoggedIn && <a className={`nav-button ${location.pathname.split('/')[1] === '' ? 'active' : ''}`} id="home" href="/"> Home</a>}
                     <span className={"nav-divider"}></span>
-                    <button className="nav-button"> Contact us</button>
+                    {!isLoggedIn && <a className={`nav-button ${location.pathname.split('/')[1] === 'contactus' ? 'active' : ''}`} id="contact" href="/contactus"> Contact us</a>}
                     <span className={"nav-divider"}></span>
-                    <button className="nav-button"> Login</button>
+                    {!isLoggedIn && <a className={`nav-button ${location.pathname.split('/')[1] === 'login' ? 'active' : ''}`} id="login" href="/login"> Login</a>}
                     <span className={"nav-divider"}></span>
-                    <button className="nav-button"> Sign up</button>
+                    {!isLoggedIn && <a className={`nav-button ${location.pathname.split('/')[1] === 'signup' ? 'active' : ''}`} id="signup" href="/signup"> Sign up</a>}
 
                 </span>
             </nav>
@@ -39,7 +41,7 @@ const Layout = () => {
                 <p className="footer-note"><a href="">Security</a></p>
                 <p className="footer-note"><a href="">Status</a></p>
                 <p className="footer-note"><a href="">Docs</a></p>
-                <p className="footer-note"><a href="">Contact</a></p>
+                <p className="footer-note"><a href="/contactus">Contact</a></p>
 
             </div>
         </footer>

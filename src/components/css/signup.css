@@ -1,0 +1,102 @@
+.image-signup {
+    height: 50vh;
+}
+
+.container-signup .signupform .firstname,
+.lastname {
+    width: 47%;
+    display: inline;
+    margin: 0.5vw 0;
+    height: 6vh;
+    border-radius: 10px;
+    border: 1px solid var(--var-secondary-color);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 0 1vw;
+}
+
+
+.main-signup {
+    height: 72vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container-signup {
+    display: flex;
+
+}
+
+.utils-signup {
+    background-color: var(--var-background-second-color);
+    border: 1px solid var(--var-secondary-color);
+    border-radius: 10px;
+    padding: 10px;
+    /* } */
+}
+
+.utils-signup h4 {
+    margin-bottom: 4%;
+    text-align: center;
+
+}
+
+.container-signup .signupform {
+    display: flex;
+    flex-direction: column;
+    width: 22vw;
+
+}
+
+.container-signup .signupform .username,
+.password,
+.submit {
+    margin: 0.5vw 0;
+    height: 6vh;
+    border-radius: 10px;
+    border: 1px solid var(--var-secondary-color);
+}
+
+.container-signup .signupform .username,
+.password {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 0 1vw;
+
+}
+
+.container-signup .signupform .username::placeholder:before {
+    content: "&#128100";
+}
+
+.container-signup .signupform .submit {
+    background-color: var(--var-secondary-color);
+    color: var(--var-background-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.container-signup .signupform .submit .loader {
+    height: 16px;
+    width: 20px;
+    display: block;
+    border: none;
+    border-left: 2px solid;
+    border-radius: 12px;
+    animation: loading 1s infinite;
+
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

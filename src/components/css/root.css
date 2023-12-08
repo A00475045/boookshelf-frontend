@@ -50,17 +50,27 @@ a {
     border: none;
     border-radius: 1vh;
     cursor: pointer;
+    padding: 0 0.5vw;
+    font-size: smaller;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     /* border-left: 1px solid var(--var-tirtiary-color); */
 }
 
 .nav-button:hover {
     background-color: #e4e3e3;
-    color: var(--var-primary-color);
+    color: var(--var-primary-color) !important;
 }
 
 .active {
     background-color: #e4e3e3;
-    color: var(--var-primary-color);
+    color: var(--var-primary-color) !important;
+}
+
+.link {
+    height: 100%;
 }
 
 .nav-divider {
