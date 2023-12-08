@@ -1,0 +1,7 @@
+.main-browser{
+    display: flex;
+    height: 100%;
+    background-color: aqua;
+    flex-wrap: wrap;
+    width: 80vw;
+}
