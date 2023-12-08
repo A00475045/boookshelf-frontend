@@ -1,5 +1,5 @@
 import './css/login.css'
-import { useEffect, useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import LoginImg from './images/login.png';
 import axios from 'axios';
 import URL from './url';
@@ -11,7 +11,7 @@ import LoginContext from './LoginContext'
 
 function Login() {
     const navigate = useNavigate();
-    const { isUserLoggedIn, setIsUserLoggedIn } = useContext(LoginContext);
+    const { setIsUserLoggedIn } = useContext(LoginContext);
     const [loginState, setLoginState] = useState("nil");
     const [inputErr, setInputErr] = useState(null);
     const [loginErr, setLoginErr] = useState(null);
@@ -64,7 +64,7 @@ function Login() {
                         <form action="#" className="loginform">
 
                             <input className={"username"} placeholder={"yourUzaNAme123"} value={username} type="text" onChange={(e) => setUsername(e.target.value)} required />
-                            <input className={"password"} placeholder={"***password***"} value={password} type="password" onChange={(e) => setPassword(e.target.value)} pattern={`^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]).{8,16}$`} title="Password must be 8-16 characters long and include at least one lowercase letter, one uppercase letter, one digit, and one special character." required />
+                            <input className={"password"} placeholder={"***password***"} value={password} type="password" onChange={(e) => setPassword(e.target.value)} pattern={`^(?=.*[a-z])(?=.*[A-Z])(?=.*d)(?=.*[!@#$%^&*()_+{}[]:;<>,.?~\\-]).{8,16}$`} title="Password must be 8-16 characters long and include at least one lowercase letter, one uppercase letter, one digit, and one special character." required />
                             <button className={"submit"} type="submit" disabled={(loginState === "await")} onClick={(e) => { e.preventDefault(); formSubmit(); return; }}>{(loginState === "await") ? <span className={"loader"}></span> : 'Log in'}</button>
                         </form>
                     </div>

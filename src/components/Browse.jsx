@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import cookie from 'js-cookie';
 import URL from './url';
+import './css/browser.css'
 
 
 const Browse = () => {
@@ -27,11 +28,11 @@ const Browse = () => {
 
 
     return (
-        <>
+        <main className='main-browser'>
             {data.map((element) => {
-                return <p>{element.title}</p>
+                return <p style={{backgroundColor:"red", borderRight:"1px solid black"}}>{element.title}</p>
             })}
-        </>
+        </main>
     )
 }
 

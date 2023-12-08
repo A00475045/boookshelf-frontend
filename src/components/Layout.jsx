@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import logoWithNameLight from './images/icon-with-name-light-theme.png';
 import logoWithNameDark from './images/icon-with-name-dark-theme.png';
 import logoLight from './images/icon-light-theme.png';
@@ -10,7 +10,7 @@ import LoginContext from './LoginContext'
 const Layout = () => {
     const location = useLocation();
     // const [isLoggedIn, setIsLoggedIn] = useState(useContext(LoginContext));
-    const { isUserLoggedIn, setIsUserLoggedIn } = useContext(LoginContext)
+    const { isUserLoggedIn } = useContext(LoginContext)
     const [activeTheme, setActiveTheme] = useState('light');
 
     return (<>

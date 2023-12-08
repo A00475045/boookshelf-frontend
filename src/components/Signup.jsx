@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './css/signup.css';
 import SignupImg from './images/signup.svg'
 import cookie from 'js-cookie'
