@@ -26,8 +26,8 @@ const Profile =() => {
     return (
         <main className='main-profile'>
             <h2>order details</h2>
-        {(arr.length===0) ? <div>{`nothing to show... :(`} </div> : arr.map((ele,index) => {
-            return <div> {index+1}.) Book id: {ele.bookId} CAD ${ele.totalAmount}</div>
+        {(arr.length===0) ? <div>{`No orders placed`} </div> : arr.map((ele,index) => {
+            return <div> {index+1}.) Book Title: {ele.bookTitle} Total Amount: CAD ${ele.totalAmount}</div>
         })}
         </main>
     )
