@@ -27,7 +27,7 @@ const Layout = () => {
                     <span className={"nav-divider"}></span>
                     {!isUserLoggedIn ? <a className={`nav-button ${location.pathname.split('/')[1] === 'login' ? 'active' : ''}`} id="login" href="/login"> Login</a> : <a className={`nav-button ${location.pathname.split('/')[1] === 'cart' ? 'active' : ''}`} id="cart" href="/cart"> Cart</a>}
                     <span className={"nav-divider"}></span>
-                    {!isUserLoggedIn ? <a className={`nav-button ${location.pathname.split('/')[1] === 'signup' ? 'active' : ''}`} id="signup" href="/signup"> Sign up</a> : <a className={`nav-button ${location.pathname.split('/')[1] === 'logout' ? 'active' : ''}`} onClick={() => { cookie.remove('username'); cookie.remove('jwt'); return }} id="logout" href="/"> Log out</a>}
+                    {!isUserLoggedIn ? <a className={`nav-button ${location.pathname.split('/')[1] === 'signup' ? 'active' : ''}`} id="signup" href="/signup"> Sign up</a> : <a className={`nav-button ${location.pathname.split('/')[1] === 'logout' ? 'active' : ''}`} onClick={() => { cookie.remove('username'); cookie.remove('jwt');cookie.remove('userID'); return }} id="logout" href="/"> Log out</a>}
 
                 </span>
             </nav>

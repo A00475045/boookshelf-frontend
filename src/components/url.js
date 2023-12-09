@@ -1,12 +1,6 @@
+const URL = "https://bookshelfbackend.azurewebsites.net/api";
 
-
-const URL = 'https://localhost:7253/api';
-
-
-// 
-
-
-
+//https://localhost:7253/api
 
 //   const myAxios = {URL , axiosInstance}
-export default URL ;
+export default URL;

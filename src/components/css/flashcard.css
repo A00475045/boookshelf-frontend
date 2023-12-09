@@ -1,0 +1,27 @@
+.cards{
+    border:1px solid black;
+    overflow: hidden;
+    width: 15vw;
+    margin-bottom: 5vh;
+    border-radius: 8px;
+    padding: 1vw 2vw;
+    background-color: var(--var-background-second-color);
+}
+.cards h5 {
+    margin-top: 0;
+}
+.cards span p {
+    font-size: 9px;
+}
+.cards span img{
+    width: 10vw;
+    margin-bottom: 5vh;
+}.cards .add-to-cart{
+    background-color: var(--var-primary-color);
+    padding: 0.5vw 0.5vw;
+    border-radius: 3px;
+    border: none;
+    color:var(--var-secondary-color);
+    box-shadow: 1px 1px 3.5px var(--var-secondary-color);
+    cursor: pointer;
+}

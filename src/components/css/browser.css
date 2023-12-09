@@ -1,7 +1,19 @@
 .main-browser{
     display: flex;
-    height: 100%;
-    background-color: aqua;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    height: 93%;
+    /* background-color: aqua; */
     flex-wrap: wrap;
     width: 80vw;
+    overflow-y: scroll;
+    padding: 1vw 2vw;
+}
+.search {
+    padding: 0 4vw;
+
+}
+.search input {
+    padding: 0 1vw;
+    
 }

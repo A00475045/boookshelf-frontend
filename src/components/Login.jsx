@@ -38,6 +38,8 @@ function Login() {
             setLoginErr(null);
             setLoginState("");
             cookie.set("username", response.data.username);
+            console.log("userID", response.data.userId, response)
+            cookie.set("userID", response.data.userId);
             cookie.set("jwt", response.data.token);
             setLoginState("LoggedIn");
             setIsUserLoggedIn(true);

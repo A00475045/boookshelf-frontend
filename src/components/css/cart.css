@@ -1,0 +1,15 @@
+.main-cart{
+    height: 73vh;
+    overflow-y: scroll;
+}
+.main-cart .cart-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2vw;
+    border-bottom: 1px solid var(--var-tirtiary-color);
+}
+.main-cart .cart-item .delete-button{
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
