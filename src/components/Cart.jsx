@@ -187,7 +187,7 @@ const Cart = () => {
 		const currentMonth = new Date().getMonth() + 1;
 		if (
 			expirationDatePattern.test(expirationDate) ||
-			parseInt(year) < currentYear ||
+			parseInt(year) < currentYear || parseInt(year) > 2031 ||
 			(parseInt(year) === currentYear && parseInt(month) < currentMonth)
 		) {
 			alert(
@@ -195,7 +195,7 @@ const Cart = () => {
 			);
 			return;
 		}
-		if (!cvvPattern.test(cvv)) {
+		if (!cvvPattern.test(cvv) || ((cvv.length === 4)&& cardType!=="amex")) {
 			alert("Invalid CVV code. Please enter a valid one.");
 			return;
 		}
@@ -235,7 +235,7 @@ const Cart = () => {
             return <></>
         })
         alert("all orders placed!!");
-        navigate("/cart");
+        navigate("/cart/");
         
 		//   !--------
 		//   booksInCart.map((book))
@@ -331,7 +331,7 @@ const Cart = () => {
 						</div>
 					);
 				})}
-			{booksInCart.length > 0 && cartToBeShown && (
+			{booksInCart.length > 0 && cartToBeShown && !paymentToBeShown && (
 				<div className="buy-all-cart-items">
 					{" "}
 					<button onClick={proceedToPayment}> Buy all</button>
