@@ -307,13 +307,13 @@ const Cart = () => {
 	}
 	return (
 		<main className="main-cart">
-            {(booksInCart.length === 0)&& <div>{`Nothing to be Shown... :)`}</div> }
+            {(booksInCart.length === 0)&& <div><h5>{`Cart is Empty`}</h5></div> }
 			{cartToBeShown && (booksInCart.length > 0) &&
 				booksInCart.map((book) => {
 					return (
 						<div className="cart-item">
 							<h5>
-								{book.bookId} {book.bookTitle}
+								Title: {book.bookTitle} | Price: CAD ${book.bookPrice}
 							</h5>
 							<button
 								className="delete-button"
