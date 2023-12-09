@@ -33,7 +33,7 @@ const Signup = () => {
             email === "" ||
             username === "" ||
             password === "" ||
-            repassword  === "" 
+            repassword  === "" || !isValidName(firstName) || !isValidName(lastName) || !isValidEmail(email)
         ) { setSignUpFormValid(false); return; }
 
         setSignUpFormValid(true);
@@ -47,8 +47,8 @@ const Signup = () => {
             email === "" ||
             username === "" ||
             password === "" ||
-            repassword  === "" 
-        ) { return;}
+            repassword  === "" || !isValidName(firstName) || !isValidName(lastName) || !isValidEmail(email)
+        ) { alert("please check the format for names,email."); return;}
         if(password !== repassword){
             setPasswordDontMatch(true);
             return;
@@ -80,6 +80,17 @@ const Signup = () => {
 
     }
 
+    function isValidName(name) {
+        // Name should not contain specified characters
+        const invalidCharactersRegex = /[;:!@#$%^*+?\\/<>1234567890]/;
+        return !invalidCharactersRegex.test(name);
+      }
+      function isValidEmail(email) {
+        // Basic email validation using a regular expression
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+
     return (
         <main className={"main-signup"}>
             <div className="container-signup">
@@ -96,7 +107,7 @@ const Signup = () => {
                         <input className={"username"} value={username} onChange={(e) => {setUsername(e.target.value); checkFormData(); return;}} id="username" placeholder={"username"} type="text" required />
                         <input className={"password"} value={password} onChange={(e) => {setPassword(e.target.value); checkFormData(); return;}} id="password" placeholder={"***password***"} type="password" required />
                         <input className={"password"} value={repassword} onChange={(e) => {setRepassword(e.target.value); checkFormData(); return;}} id="repassword" placeholder={"password again"} type="password" required />
-                        <button title={signUpFormValid ? "Disabled" : ""} className={"submit"} style={{backgroundColor: signUpFormValid ? "var(--var-secondary-color)" : "grey"}} type="submit" disabled={!signUpFormValid} onClick={(e) => { e.preventDefault(); formSubmit(); return; }}>{(signupState === "await") ? <span className={"loader"}></span> : 'Sign up'}</button>
+                        <button title={signUpFormValid ? "Enabled" : "Disabled"} className={"submit"} style={{backgroundColor: signUpFormValid ? "var(--var-secondary-color)" : "grey"}} type="submit" disabled={!signUpFormValid} onClick={(e) => { e.preventDefault(); formSubmit(); return; }}>{(signupState === "await") ? <span className={"loader"}></span> : 'Sign up'}</button>
                     </form>
                 </div>
                 {passwordDontMatch && <p style={{color : "red", fontSize:8}}>Password & confirm Password dont match!!</p>}

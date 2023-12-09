@@ -13,3 +13,76 @@
     border: none;
     cursor: pointer;
 }
+.main-cart .buy-all-cart-items {
+    /* display: block; */
+    /* background-color:aqua; */
+    display: flex;
+    justify-content: flex-end;
+    height: 8vh;
+    /* background-color: var(--var-secondary-color); */
+    padding: 0vh 2vw ;
+    
+
+}
+.main-cart .buy-all-cart-items button {
+    border: none;
+    height: 8vh;
+    background-color: var(--var-primary-color);
+    border-radius: 8px;
+    position: absolute;
+    width: 8vw;
+    top: 70vh;
+    right: 10vw;
+    box-shadow: 0px 0px 6px var(--var-secondary-color);
+    cursor: pointer;
+}
+.main-cart .address{
+    display: flex;
+    flex-direction: column;
+}
+.main-cart .postal-code-valid, .phone-valid, .city-valid{
+    font-size: 8px;
+    color: red;
+}
+.main-cart .address {
+    font-size: 12px;
+}
+.main-cart .address input,select{
+    width: 20vw;
+    height: 3.7vh;
+}
+.main-cart .address p{
+    display: inline;
+}
+.main-cart .address .city,.street,.postal,.phone-number{
+    margin-left: 10px;
+    margin-top: 10px;
+
+}
+
+.main-cart .payment {
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.main-cart .payment form{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 11px;
+    font-weight: 400;
+    /* flex-direction: column; */
+}
+
+.main-cart .divider {
+    border-bottom: 1px solid var(--var-secondary-color);
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+.main-cart .payment form span{
+    margin-right: 5vw;
+    margin-top: 2vh;
+}
+.main-cart .payment form span input{
+    margin-left: 1vw;
+}

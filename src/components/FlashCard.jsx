@@ -37,7 +37,7 @@ const FlashCard = ({book, userID, dataIncart}) => {
         { <div className="cards">
             
             <h5>{book.title}</h5>
-<span><p>{book.categoryName}</p> <img src={book.imageUrl} alt="" /></span>
+<span><p>{book.categoryName} CAD${book.price}</p> <img src={book.imageUrl} alt="" /></span>
             
             {canBeAdded && <button className='add-to-cart' onClick={addToCart}> Add to Cart </button>}
         </div>}
