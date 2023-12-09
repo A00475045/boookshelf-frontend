@@ -1,5 +1,110 @@
-:root{
+:root {
     --var-primary-color: #EA5141;
     --var-secondary-color: #21272D;
+    --var-tirtiary-color: #e6e2d8;
     --var-background-color: #F9F6ED;
+    --var-background-second-color: #F0F0F0;
+    /* body{
+
+    } */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--var-background-color);
+}
+
+a {
+    text-decoration: none !important;
+    color: grey !important;
+}
+
+.website-logo {
+    width: 10vw;
+}
+
+.top-nav {
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    /* margin-top: 1vh; */
+    padding: 0 2.5vh;
+    justify-content: space-between;
+    background-color: var(--var-background-second-color);
+    border-bottom: 0.1px solid var(--var-tirtiary-color);
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 -5px 10px var(--var-secondary-color);
+}
+
+.nav-options {
+    width: 30vw;
+    height: 5vh;
+    /* background-color: #EA5141; */
+    display: flex;
+    justify-content: space-evenly;
+    color: var(--var-primary-color) !important;
+}
+
+
+.nav-button {
+    border: none;
+    border-radius: 1vh;
+    cursor: pointer;
+    padding: 0 0.5vw;
+    font-size: smaller;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* border-left: 1px solid var(--var-tirtiary-color); */
+}
+
+.nav-button:hover {
+    background-color: #e4e3e3;
+    color: var(--var-primary-color) !important;
+}
+
+.active {
+    background-color: #e4e3e3;
+    color: var(--var-primary-color) !important;
+}
+
+.link {
+    height: 100%;
+}
+
+.nav-divider {
+    /* height: 8vh; */
+    border: none;
+    border-left: 1px solid var(--var-tirtiary-color);
+
+}
+
+.footer {
+    height: 20vh;
+    background-color: var(--var-secondary-color);
+    /* text-decoration: none !important; */
+    color: grey !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-nav {
+    /* background-color: whitesmoke; */
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo {
+    height: 6vh;
+}
+
+.footer-note {
+    display: inline;
+    margin-left: 1vw;
 }

@@ -1,0 +1,36 @@
+.main-dashboard {
+    display: flex;
+    height: 80vh;
+    background-color: var(--var-background-color);
+}
+
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white;
+    width: 20vw;
+    align-items: center;
+    border-right: 0.5px solid var(--var-tirtiary-color);
+    position: relative;
+    z-index: 5;
+    padding-top: 26px;
+    box-shadow: -5px 0 10px;
+
+
+}
+
+.side-button {
+    width: 100%;
+}
+
+.nav-element {
+    /* background-color: var(--var-background-second-color); */
+    width: 95%;
+    text-align: left;
+    padding: 0.5vh 1vw;
+    border-bottom: 0.5px solid var(--var-tirtiary-color);
+    border-radius: 10px;
+    display: block;
+    margin: 0 !important;
+}

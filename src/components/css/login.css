@@ -1,0 +1,85 @@
+.main-login {
+    height: 72vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container-login {
+    display: flex;
+
+}
+
+.utils-login {
+    background-color: var(--var-background-second-color);
+    border: 1px solid var(--var-secondary-color);
+    border-radius: 10px;
+    padding: 10px;
+    /* } */
+}
+
+.utils-login h4 {
+    margin-bottom: 4%;
+    text-align: center;
+
+}
+
+.container-login .loginform {
+    display: flex;
+    flex-direction: column;
+    width: 22vw;
+
+}
+
+.container-login .loginform .username,
+.password,
+.submit {
+    margin: 1vw 0;
+    height: 6vh;
+    border-radius: 10px;
+    border: 1px solid var(--var-secondary-color);
+}
+
+.container-login .loginform .username,
+.password {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 0 1vw;
+
+}
+
+.container-login .loginform .username::placeholder:before {
+    content: "&#128100";
+}
+
+.container-login .loginform .submit {
+    background-color: var(--var-secondary-color);
+    color: var(--var-background-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.container-login .loginform .submit .loader {
+    height: 16px;
+    width: 20px;
+    display: block;
+    border: none;
+    border-left: 2px solid;
+    border-radius: 12px;
+    animation: loading 1s infinite;
+
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

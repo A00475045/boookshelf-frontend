@@ -1,0 +1,33 @@
+.main-contact {
+    height: 72vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-contact {
+    display: flex;
+    width: 70vw;
+    /* background-color: hotpink; */
+    justify-content: center;
+}
+
+.utils-contact {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    align-items: center;
+    /* background-color: honeydew; */
+}
+
+.divider {
+    border: none;
+    border-bottom: 1px solid var(--var-tirtiary-color);
+    width: 100%;
+}
+
+.contact-us {
+    font-size: 2.5vh;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 5%;
+}
